@@ -1,0 +1,51 @@
+:root {
+  --bg: #fbf7f2; --fg: #241f1c; --muted: #6b625b; --rule: #e5dbcf;
+  --accent: #a2543a; --soft: #fff9f2; --quote: #8a6b52;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #171412; --fg: #ece5dd; --muted: #a2978d; --rule: #2f2925;
+    --accent: #d99772; --soft: #1d1917; --quote: #c0a98f;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171412; --fg: #ece5dd; --muted: #a2978d; --rule: #2f2925;
+  --accent: #d99772; --soft: #1d1917; --quote: #c0a98f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 18px/1.7 "Iowan Old Style", Charter, Palatino, Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 38rem; margin: 0 auto; padding: 3rem 1.3rem 6rem; }
+a { color: var(--accent); text-underline-offset: 3px; }
+header.site { margin-bottom: 3rem; }
+header.site .name { font-size: .95rem; letter-spacing: .02em; font-weight: 600;
+                    text-decoration: none; color: var(--fg); display: block; margin-bottom: .5rem; }
+header.site nav { display: flex; gap: 1.3rem; font-size: .85rem;
+                  font-family: system-ui, sans-serif; }
+h1 { font-size: 2.15rem; line-height: 1.22; text-wrap: balance; margin: 0 0 .7rem;
+     letter-spacing: -.01em; }
+h2 { font-size: 1.3rem; margin: 2.8rem 0 .8rem; text-wrap: balance; }
+.lede { font-size: 1.16rem; color: var(--muted); margin: 0 0 2rem; line-height: 1.55; }
+.date { font-family: system-ui, sans-serif; font-size: .8rem; color: var(--muted);
+        letter-spacing: .04em; text-transform: uppercase; margin: 0 0 2.2rem; }
+p { margin: 0 0 1.2rem; }
+blockquote { margin: 2rem 0; padding: 0 0 0 1.3rem; border-left: 2px solid var(--accent);
+             color: var(--quote); font-style: italic; font-size: 1.06rem; }
+.entry { display: block; text-decoration: none; color: inherit; padding: 1.3rem 0;
+         border-bottom: 1px solid var(--rule); }
+.entry:hover h3 { color: var(--accent); }
+.entry h3 { margin: 0 0 .35rem; font-size: 1.12rem; font-weight: 600; }
+.entry p { margin: 0; color: var(--muted); font-size: .97rem; line-height: 1.55; }
+.entry .d { font-family: system-ui, sans-serif; font-size: .74rem; color: var(--muted);
+            text-transform: uppercase; letter-spacing: .05em; display: block; margin-bottom: .3rem; }
+.thesis { background: var(--soft); border: 1px solid var(--rule); border-radius: 10px;
+          padding: 1.6rem 1.7rem; margin: 2.5rem 0; }
+.thesis h2 { margin-top: 0; }
+.subscribe { background: var(--soft); border: 1px solid var(--rule); border-radius: 10px;
+             padding: 1.5rem 1.7rem; margin: 3rem 0 0; }
+.subscribe p { font-size: .97rem; }
+footer { border-top: 1px solid var(--rule); margin-top: 4rem; padding-top: 1.4rem;
+         font-family: system-ui, sans-serif; font-size: .85rem; color: var(--muted); }
