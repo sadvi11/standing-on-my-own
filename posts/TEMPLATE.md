@@ -25,8 +25,39 @@ have to.
 `YYYY-MM-DD`. The build refuses anything else, so a typo fails loudly instead
 of sorting your archive wrongly.
 
+## If you cite a number, cite the source
+
+This matters more here than anywhere else you write.
+
+You will reference statistics on women's mental health, financial resilience
+and independence. **Every one of those needs a primary source, linked inline.**
+Statistics Canada, CIRA, government agencies, peer-reviewed papers — not a
+coaching blog, not a LinkedIn post, not a market-research projection quoted as
+fact.
+
+Two reasons, and the second is the one that costs you.
+
+A wrong number about women's mental health is not a small error. Somebody may
+act on it.
+
+And a TEDx reviewer, a journalist, or a conference organiser checks your
+numbers first. One unsourced claim they can disprove ends the conversation,
+regardless of how good the rest of the talk is.
+
+If you cannot find a primary source, write the sentence without the number.
+"Many women" is honest. A confident statistic you cannot back is not.
+
+## You are not a therapist
+
+Write about emotional patterns, boundaries, confidence, identity. Do not
+diagnose, do not treat, and do not imply clinical training you do not have.
+
+Where a piece touches something that needs professional help, say so plainly.
+That protects the reader and it protects you.
+
 ## Before publishing
 
 - Is there something concrete in the first three lines?
 - Am I writing what I actually think, or what sounds wise?
 - If someone I wrote about read this, would it be fair?
+- Is every number sourced, and every source primary?
