@@ -103,6 +103,33 @@ def pretty(iso: str) -> str:
     return f"{d.day} {d.strftime('%B %Y')}"
 
 
+MANIFEST = HERE / ".generated"
+
+
+def prune(current: set[str]) -> None:
+    """Delete pages whose markdown is gone.
+
+    Without this, removing a post takes it off the index and leaves the page
+    live at its URL forever. On a site about my own life that is not deletion,
+    it is a page I believe is gone and is not.
+
+    Only files this script previously wrote are ever removed - hand-written
+    pages like about.html and speaking.html were never in the manifest, so they
+    cannot be touched by a bug here.
+    """
+    previous = set()
+    if MANIFEST.exists():
+        previous = {line.strip() for line in MANIFEST.read_text().splitlines() if line.strip()}
+
+    for orphan in sorted(previous - current):
+        target = HERE / orphan
+        if target.exists():
+            target.unlink()
+            print(f"  removed {orphan} (its markdown is gone)")
+
+    MANIFEST.write_text("\n".join(sorted(current)) + "\n")
+
+
 def main() -> int:
     paths = sorted(p for p in POSTS.glob("*.md") if p.stem != "TEMPLATE")
     if not paths:
@@ -132,6 +159,8 @@ def main() -> int:
     (HERE / "index.html").write_text(re.sub(
         r"(<!-- POSTS -->).*?(<!-- /POSTS -->)",
         lambda m: f"{m.group(1)}\n{entries}\n  {m.group(2)}", idx, flags=re.S))
+    prune({f"{p['slug']}.html" for p in posts})
+
     print(f"\n  {len(posts)} pieces")
     return 0
 
